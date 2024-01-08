@@ -84,10 +84,14 @@ resource "aws_security_group" "demo-sg" {
 
 # Create EC2 Instance
 resource "aws_instance" "demo" {
-  ami                    = "ami-0a0f1259dd1c90938"
+  ami                    = "ami-03f4878755434977f"
   instance_type          = "t2.micro"
   key_name               = "abc.pem"
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
   subnet_id              = aws_subnet.dpp-public-subnet-01.id  # Choose your preferred subnet
+  for_each = toset(["jenkin-master","jenkin-slave", "ansible"])
+      tags = {
+        Name = "${each.key}"
+       } 
 }
 
