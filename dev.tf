@@ -31,3 +31,19 @@ resource "aws_security_group" "demo-sg" {
     Name = "ssh-port"
   }
 }
+
+# create vpc
+resource "aws_vpc" "dpp-vpc" {
+  cidr_block = "10.1.0.0/16" 
+  tags = {
+    name = "dpp-vpc"
+  }
+  
+}
+resource "aws_subnet" "dpp-public-subnet-01"{
+  vpc_id = aws_vpc.dpp-vpc.id
+  cidr_block = "10.1.1.0/24"
+  map_public_ip_on_launch = "true"
+  availability_zone = "ap-south-1"
+  
+}
