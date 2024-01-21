@@ -11,7 +11,7 @@
 
     - name: install java
       apt:
-        name: openjdk-11-jre
+        name: openjdk-17-jdk
         state: present
 
     - name: download maven packages

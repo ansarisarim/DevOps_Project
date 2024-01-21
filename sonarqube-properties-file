@@ -1,0 +1,9 @@
+sonar.verbos=true
+sonar.organization=sarim01-key
+sonar.projectkey=sarim01-key_twittertrend
+sonar.projectName=twittertrend
+sonar.language=java
+sonar.sourceEncoading=
+sonar.source=
+sonar.java.binaries=
+sonar.cover.jacoco.xmlReprtPaths=

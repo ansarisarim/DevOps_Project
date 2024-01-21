@@ -24,7 +24,7 @@
 
      - name: install jave
        apt:
-        name: openjdk-11-jre
+        name: openjdk-17-jdk
         state: present
 
     - name: install jenkins
